@@ -1,0 +1,20 @@
+const express = require('express');
+const {addUser, addBook,addToReadingList, updateBook,removeBookFromReadingList} = require("./controllers/app");
+const {searchBooks,getUserByReadingList} = require("./controllers/getController");
+
+const app = express();
+app.use(express.json());
+
+
+app.post('/api/users',addUser);
+app.post('/api/books',addBook);
+app.get('/api/books/search',searchBooks);
+app.post('/api/reading-list',addToReadingList);
+app.post('/api/books/:bookId',updateBook);
+app.get('/api/reading-list/:userId',getUserByReadingList);
+app.post('/api/reading-list/:readingListId',removeBookFromReadingList);
+
+const PORT = 3000 || process.env.PORT
+app.listen(PORT,()=>{
+    console.log(`Server is running on ${PORT}`);
+})
