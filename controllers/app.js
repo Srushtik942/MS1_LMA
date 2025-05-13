@@ -137,7 +137,7 @@ const removeBookFromReadingList = async(req,res)=>{
         const findreadingListId = await ReadingList.findByPk(readingListId);
 
         const removeReadingList = await ReadingList.destroy({
-            where: {id: findreadingListId}
+            where: {id: readingListId}
         })
 
         res.json(200).json({message: "Book removed from reading list"});

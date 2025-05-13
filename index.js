@@ -12,7 +12,7 @@ app.get('/api/books/search',searchBooks);
 app.post('/api/reading-list',addToReadingList);
 app.post('/api/books/:bookId',updateBook);
 app.get('/api/reading-list/:userId',getUserByReadingList);
-app.post('/api/reading-list/:readingListId',removeBookFromReadingList);
+app.delete('/api/reading-list/:readingListId',removeBookFromReadingList);
 
 const PORT = 3000 || process.env.PORT
 app.listen(PORT,()=>{
