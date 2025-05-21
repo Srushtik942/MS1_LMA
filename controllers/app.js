@@ -30,6 +30,8 @@ try{
    });
 //    console.log(newUser);
 
+//  return res.status(200);
+
    return res.status(200).json({
     message:"User created successfully!",
     newUser

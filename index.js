@@ -14,7 +14,4 @@ app.post('/api/books/:bookId',updateBook);
 app.get('/api/reading-list/:userId',getUserByReadingList);
 app.delete('/api/reading-list/:readingListId',removeBookFromReadingList);
 
-const PORT = 3000 || process.env.PORT
-app.listen(PORT,()=>{
-    console.log(`Server is running on ${PORT}`);
-})
+module.exports = app;
